@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
     has_many :builds
+    has_many :comments
     has_secure_password
     
     validates :email, presence: true
