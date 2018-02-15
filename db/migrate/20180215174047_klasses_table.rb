@@ -1,6 +1,6 @@
-class ClassesTable < ActiveRecord::Migration[5.1]
+class KlassesTable < ActiveRecord::Migration[5.1]
   def change
-      create_table :classes do |t|
+      create_table :klasses do |t|
           t.string :name
           t.string :skills
       end

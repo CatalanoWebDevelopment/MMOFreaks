@@ -20,18 +20,18 @@ ActiveRecord::Schema.define(version: 20180215174303) do
   create_table "builds", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.integer "class_id"
+    t.integer "klass_id"
     t.integer "race_id"
   end
 
-  create_table "classes", force: :cascade do |t|
-    t.string "name"
-    t.string "skills"
-  end
-
-  create_table "equipment", force: :cascade do |t|
+  create_table "equipments", force: :cascade do |t|
     t.string "stats"
     t.string "name"
+  end
+
+  create_table "klasses", force: :cascade do |t|
+    t.string "name"
+    t.string "skills"
   end
 
   create_table "races", force: :cascade do |t|
