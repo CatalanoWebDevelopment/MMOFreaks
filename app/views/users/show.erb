@@ -1,0 +1,14 @@
+<h1>Welcome <%= @user.username %>!</h1>
+
+<h3>Available Builds:</h3>
+<ol>
+<% @user.builds.each do |build| %>
+    <li><a href="/builds/<%= build.id %>"><%= build.name %></a></li>
+<% end %>
+</ol>
+
+<br><br>
+<button><a href='/builds/new'>Create a Build</a></button>
+
+<br><br>
+<button><a href='/logout'>Logout</a></button>
