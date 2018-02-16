@@ -1,6 +1,15 @@
+build => {name: "NAME", description: "DESC", user_id: 1}
+race => {name: "NAME", attributes: "attributes"},
+equipment => {states: "stats", name: "name"}
+
+@build = Build.new(params[:build])
+@build.build_race(params[:race])
+
 <h1>Welcome to MMOFreaks Build Creation!</h1>
 
 <form method="post" action='/builds'>
+    <input type="hidden" name="builds[user_id]" value="<%= current_user.id %>">
+    
     <h3>Name Your Build:</h3>
     <input type="text" name="builds[name]">
     
