@@ -5,6 +5,7 @@ class BuildsTable < ActiveRecord::Migration[5.1]
           t.string :name
           t.integer :klass_id
           t.integer :race_id
+          t.string :description
       end
   end
 end

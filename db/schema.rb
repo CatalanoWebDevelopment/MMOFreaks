@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180215184508) do
     t.string "name"
     t.integer "klass_id"
     t.integer "race_id"
+    t.string "description"
   end
 
   create_table "comments", force: :cascade do |t|
