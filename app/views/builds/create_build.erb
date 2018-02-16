@@ -1,9 +1,11 @@
+<!--
 build => {name: "NAME", description: "DESC", user_id: 1}
 race => {name: "NAME", attributes: "attributes"},
 equipment => {stats: "stats", name: "name"}
 
 @build = Build.new(params[:build])
 @build.build_race(params[:race])
+-->
 
 <h1>Welcome to MMOFreaks Build Creation!</h1>
 
@@ -71,22 +73,22 @@ equipment => {stats: "stats", name: "name"}
     
     <h3>Encounters</h3>
     <label for="1">Encounter 1: </label>
-    <input type="text" name="klass[skills]">
+    <input type="text" name="klass[skills][]">
     
     <br><br>
     
     <label for="2">Encounter 2: </label>
-    <input type="text" name="klass[skills]">
+    <input type="text" name="klass[skills][]">
     
     <br><br>
     
     <label for="3">Encounter 3: </label>
-    <input type="text" name="klass[skills]">
+    <input type="text" name="klass[skills][]">
     
     <br><br>
     
     <label for="4">Encounter 4: </label>
-    <input type="text" name="klass[skills]">
+    <input type="text" name="klass[skills][]">
     
     <br><br>
     

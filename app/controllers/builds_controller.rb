@@ -13,7 +13,10 @@ class BuildsController < ApplicationController
             if params[:race] == "" || params[:klass] == "" || params[:build] == ""
                 redirect '/builds/new'
             else
-                @build = current_user.builds.build()
+                @build = Build.create(params[:build])
+                @build.build_race(params[:race])
+                @build.build_klass(params[:klass])
+                
                 if @build.save
                     redirect "/builds/#{@build.id}"
                 else
