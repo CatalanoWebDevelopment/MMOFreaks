@@ -1,6 +1,6 @@
 build => {name: "NAME", description: "DESC", user_id: 1}
 race => {name: "NAME", attributes: "attributes"},
-equipment => {states: "stats", name: "name"}
+equipment => {stats: "stats", name: "name"}
 
 @build = Build.new(params[:build])
 @build.build_race(params[:race])
@@ -8,20 +8,20 @@ equipment => {states: "stats", name: "name"}
 <h1>Welcome to MMOFreaks Build Creation!</h1>
 
 <form method="post" action='/builds'>
-    <input type="hidden" name="builds[user_id]" value="<%= current_user.id %>">
+    <input type="hidden" name="build[user_id]" value="<%= current_user.id %>">
     
     <h3>Name Your Build:</h3>
-    <input type="text" name="builds[name]">
+    <input type="text" name="build[name]">
     
     <br><br>
     
     <h3>Describe your build with encounter rotations and stat distributions:</h3>
-    <textarea name="builds[description]"></textarea>
+    <textarea name="build[description]"></textarea>
         
     <br><br>
     
     <h3>Choose a Race:</h3>
-    <select name="builds[race]">
+    <select name="race[name]">
         <option value="Half-Orc">Half-Orc</option>
         <option value="Drow">Drow</option>
         <option value="Human">Human</option>
@@ -35,7 +35,7 @@ equipment => {states: "stats", name: "name"}
     <br><br>
 
     <h3>Choose a Class:</h3>
-    <select name="builds[klass]">
+    <select name="klass[name]">
         <option value="Great Weapons Fighter">Great Weapons Fighter</option>
         <option value="Guardian Fighter">Guardian Fighter</option>
         <option value="Control Wizard">Control Wizard</option>
@@ -50,43 +50,43 @@ equipment => {states: "stats", name: "name"}
     
     <h3>Write Out the Necessary Equipment</h3>
     <label for="head">Headpiece: </label>
-    <input type="text" name="builds[equipment][]" id="head">
+    <input type="text" name="equipment[name][head][]" id="head">
     
     <br><br>
     
     <label for="chest">Chestpiece: </label>
-    <input type="text" name="build[equipment][]" id="chest">
+    <input type="text" name="equipment[name][chest][]" id="chest">
     
     <br><br>
     
     <label for="arms">Arms: </label>
-    <input type="text" name="builds[equipment][]" id="arms">
+    <input type="text" name="equipment[name][arms][]" id="arms">
     
     <br><br>
     
     <label for="feet">Feet: </label>
-    <input type="text" name="builds[equipment][]" id="feet">
+    <input type="text" name="equipment[name][feet][]" id="feet">
     
     <br><br>
     
     <h3>Encounters</h3>
     <label for="1">Encounter 1: </label>
-    <input type="text" name="builds[skills][]">
+    <input type="text" name="klass[skills]">
     
     <br><br>
     
     <label for="2">Encounter 2: </label>
-    <input type="text" name="builds[skills][]">
+    <input type="text" name="klass[skills]">
     
     <br><br>
     
     <label for="3">Encounter 3: </label>
-    <input type="text" name="builds[skills][]">
+    <input type="text" name="klass[skills]">
     
     <br><br>
     
     <label for="4">Encounter 4: </label>
-    <input type="text" name="builds[skills][]">
+    <input type="text" name="klass[skills]">
     
     <br><br>
     

@@ -10,7 +10,7 @@ class BuildsController < ApplicationController
     
     post '/builds' do
         if logged_in?
-            if params[:race] == "" || params[:klass] == "" || params[:name] == ""
+            if params[:race] == "" || params[:klass] == "" || params[:build] == ""
                 redirect '/builds/new'
             else
                 @build = current_user.builds.build()
