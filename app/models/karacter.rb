@@ -1,4 +1,4 @@
-class Race < ActiveRecord::Base
+class Character < ActiveRecord::Base
     has_many :builds
     
     validates :name, presence: true

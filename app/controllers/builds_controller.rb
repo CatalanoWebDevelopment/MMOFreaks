@@ -1,3 +1,4 @@
+require 'pry'
 class BuildsController < ApplicationController
     
     get "/builds/new" do
@@ -8,14 +9,19 @@ class BuildsController < ApplicationController
         end
     end
     
-    post '/builds' do
+    post '/builds' do        
         if logged_in?
-            if params[:race] == "" || params[:klass] == "" || params[:build] == ""
+            if params[:karacter] == "" || params[:klass] == "" || params[:build] == ""
                 redirect '/builds/new'
             else
+                
                 @build = Build.create(params[:build])
-                @build.build_race(params[:race])
+                @build.build_karacter(params[:karacter])
                 @build.build_klass(params[:klass])
+                @build.equipments.build_equipment
+                
+                
+                
                 
                 if @build.save
                     redirect "/builds/#{@build.id}"

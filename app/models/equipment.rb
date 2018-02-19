@@ -1,4 +1,4 @@
 class Equipment < ActiveRecord::Base
-    has_many :buildequipments
-    has_many :builds, through: :buildequipments
+    has_many :build_equipments
+    has_many :builds, through: :build_equipments
 end

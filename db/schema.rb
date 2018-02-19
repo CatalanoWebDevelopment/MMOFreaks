@@ -34,16 +34,20 @@ ActiveRecord::Schema.define(version: 20180215184508) do
   create_table "equipments", force: :cascade do |t|
     t.string "stats"
     t.string "name"
+    t.string "head"
+    t.string "chest"
+    t.string "arms"
+    t.string "feet"
+  end
+
+  create_table "karacters", force: :cascade do |t|
+    t.string "name"
+    t.string "attributes"
   end
 
   create_table "klasses", force: :cascade do |t|
     t.string "name"
     t.string "skills"
-  end
-
-  create_table "races", force: :cascade do |t|
-    t.string "name"
-    t.string "attributes"
   end
 
   create_table "users", force: :cascade do |t|
