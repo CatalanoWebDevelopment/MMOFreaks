@@ -1,4 +1,62 @@
-.heading-container {
-    margin: 0, auto;
+/*ALL*/
+html {
+    font-family: fantasy;
 }
+
+.submit-button {
+    display: table;
+    margin: 0 auto;
+    font: 1em fantasy;
+}
+
+/*INDEX PAGE*/
+
+#don {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.8;
+    position: absolute;
+    z-index: 0;
+    min-height: 100%;
+    width: 100%;
+}
+
+.heading-container {
+    display: table;
+    margin: 0 auto;
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+}
+
+.headline {
+    display: table;
+    margin: auto;
+    font-family: fantasy;
+}
+
+#login-box {
+    background-color: rgba( 16, 86, 238, 0.716 );
+    border: solid 0.1em black;
+    padding: 1em;
+    border-radius: 1em;
+    color: black;
+    font-family: fantasy;
+    font-weight: bold;
+}
+
+#signup-box {
+    background-color: rgba( 16, 86, 238, 0.716 );
+    border: solid 0.1em black;
+    padding: 1em;
+    border-radius: 1em;
+    color: black;
+    font-family: fantasy;
+    font-weight: bold;
+}
+
+/*USERS SHOW PAGE*/
+
 

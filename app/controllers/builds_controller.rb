@@ -27,8 +27,9 @@ class BuildsController < ApplicationController
                 @build.gears.push(new_gear)
                 
                 @build.save
-           
+                
                 if @build.save
+                    
                     redirect "/builds/#{@build.id}"
                 else
                     redirect "/builds/new"
@@ -42,6 +43,7 @@ class BuildsController < ApplicationController
     get '/builds/:id' do
         if logged_in?
             @build = Build.find_by_id(params[:id])
+            @user = current_user
             erb :'/builds/show'
         else
             redirect '/'

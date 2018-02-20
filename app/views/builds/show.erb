@@ -10,20 +10,25 @@
 <h3>Class: <%=  @build.klass.name %></h3>
 
 <h3>Equipment: </h3>
-<% @build.gears.each do |gear|%>
+    <% @build.gears.each do |gear|%>
     <ul>
         <li>Head: <%= gear.head %></li>
         <li>Chest: <%= gear.chest %></li>
         <li>Arms: <%= gear.arms %></li>
         <li>Feet: <%= gear.feet %></li>
     </ul>
-<% end %>
+    <% end %>
 <br><br>
 
 <h3>Encounters: </h3>
-<% @build.klass.readable_skills.each do |skill| %>
-<ul>
+    <% @build.klass.readable_skills.each do |skill| %>
+    <ul>
         <li><%= skill %></li>
-</ul>
-<% end %>
+    </ul>
+    <% end %>
+
+<button class="submit-button"><a href="/users/<%= @user.slug %>">Back to Profile Page</a></button>
+
+
+
 
