@@ -1,0 +1,55 @@
+<div class="heading-container">
+    <h1>You are now editing: <%= @build.name %></h1>
+    
+    <form method="POST" action="/builds/<%= @build.id %>">
+        <input type="hidden" name="_method" value="PATCH">
+        
+        <label for="new_name">New Name: </label>
+        <input type="text" id="new_name" name="build[name]" placeholder="<%= @build.name %>">
+        
+        <br><br>
+        
+        <label for="new_desc">New Description: </label><br>
+        <textarea id="new_desc" name="build[description]" placeholder="<%= @build.description %>"></textarea>
+        
+        <br><br>
+        
+        <label for="new_race">New Race: </label>
+        <select name="karacter[race]">
+            <option value="Half-Orc" <%= "selected" if @build.karacter.race == "Half-Orc" %>>Half-Orc</option>
+            <option value="Drow">Drow</option>
+            <option value="Human">Human</option>
+            <option value="Dragonkin" <%= "selected" if @build.karacter.race == "Dragonkin" %>>Dragonkin</option>
+            <option value="Dwarf">Dwarf</option>
+            <option value="Sun-Elf">Sun-Elf</option>
+            <option value="Wood-Elf">Wood-Elf</option>
+            <option value="Halfing">Halfing</option>
+        </select>
+        
+        <br><br>
+        
+        <label>New Equipment: </label><br>
+        <% @build.gears.each do |gear| %>
+        <label for="new_head">Headpiece: </label>
+        <input type="text" name="gear[head]" id="new_head" placeholder="@build.">
+        
+        <br><br>
+        
+        <label for="new_chest">Chestpiece: </label>
+        <input type="text" name="gear[chest]" id="new_chest">
+
+        <br><br>
+
+        <label for="new_arms">Arms: </label>
+        <input type="text" name="gear[arms]" id="new_arms">
+
+        <br><br>
+
+        <label for="new_feet">Feet: </label>
+        <input type="text" name="gear[feet]" id="new_feet">
+        <% end %>
+        
+    
+    </form>
+
+</div>

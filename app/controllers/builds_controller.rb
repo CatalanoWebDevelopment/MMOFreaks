@@ -60,6 +60,8 @@ class BuildsController < ApplicationController
     
     get '/builds/:id/edit' do
         @build = Build.find_by_id(params[:id])
+        
+        erb :'/builds/edit_build'
     end
         
     
