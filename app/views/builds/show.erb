@@ -29,6 +29,21 @@
     </ul>
     <% end %>
 
+<br><br>
+
+<% if current_user.builds.include?(@build) %>
+    <form method="POST" action="/builds/<%= @build.id %>/delete">
+        <input type="hidden" name="_method" value="DELETE">
+        <button name="submit" value="submit" class="submit-button">Delete Build</button>
+    </form>
+
+    <br>
+    
+    <button class="submit-button"><a href="/builds/<%= @build.id %>/edit">Edit Build</a></button>
+<% end %>
+
+<br><br>
+
 <button class="submit-button"><a href="/users/<%= @user.slug %>">Back to Profile Page</a></button>
 
 

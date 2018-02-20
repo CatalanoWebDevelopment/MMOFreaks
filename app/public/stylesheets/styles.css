@@ -92,3 +92,17 @@ a:hover {
     height: 30em;
     width: 100%;
 } 
+
+/*CREATE BUILDS PAGE*/
+
+#tiamat {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.6;
+    position: absolute;
+    z-index: 0;
+    min-height: 100%;
+    width: 100%;
+}

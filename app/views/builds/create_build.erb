@@ -1,91 +1,86 @@
-<!--
-build => {name: "NAME", description: "DESC", user_id: 1}
-race => {name: "NAME", attributes: "attributes"},
-equipment => {stats: "stats", name: "name"}
+<img src="/images/NWO_Dragons.jpg" alt="Neverwinter Dragons of Tiamat" id="tiamat">
 
-@build = Build.new(params[:build])
-@build.build_race(params[:race])
--->
+<div class="heading-container">
+    <h1>Welcome to MMOFreaks Build Creation!</h1>
 
-<h1>Welcome to MMOFreaks Build Creation!</h1>
+    <form method="post" action='/builds'>
+        <input type="hidden" name="build[user_id]" value="<%= current_user.id %>">
 
-<form method="post" action='/builds'>
-    <input type="hidden" name="build[user_id]" value="<%= current_user.id %>">
-    
-    <h3>Name Your Build:</h3>
-    <input type="text" name="build[name]">
-    
-    <br><br>
-    
-    <h3>Describe your build with encounter rotations and stat distributions:</h3>
-    <textarea name="build[description]"></textarea>
-        
-    <br><br>
-    
-    <h3>Choose a Race:</h3>
-    <select name="karacter[race]">
-        <option value="Half-Orc">Half-Orc</option>
-        <option value="Drow">Drow</option>
-        <option value="Human">Human</option>
-        <option value="Dragonkin">Dragonkin</option>
-        <option value="Dwarf">Dwarf</option>
-        <option value="Sun-Elf">Sun-Elf</option>
-        <option value="Wood-Elf">Wood-Elf</option>
-        <option value="Halfing">Halfing</option>
-    </select>
-    
-    <br><br>
+        <h3>Name Your Build:</h3>
+        <input type="text" name="build[name]">
 
-    <h3>Choose a Class:</h3>
-    <select name="klass[name]">
-        <option value="Great Weapons Fighter">Great Weapons Fighter</option>
-        <option value="Guardian Fighter">Guardian Fighter</option>
-        <option value="Control Wizard">Control Wizard</option>
-        <option value="Scourge Warlock">Scourge Warlock</option>
-        <option value="Hunter Ranger">Hunter Ranger</option>
-        <option value="Trickster Rogue">Trickster Rogue</option>
-        <option value="Divine Cleric">Divine Cleric</option>
-        <option value="Oathbound Paladin">Oathbound Paladin</option>
-    </select>
-    
-    <br><br>
-    
-    <h3>Write Out the Necessary Equipment</h3>
-    <label for="head">Headpiece: </label>
-    <input type="text" name="gear[head]" id="head">
-    
-    <br><br>
-    
-    <label for="chest">Chestpiece: </label>
-    <input type="text" name="gear[chest]" id="chest">
-    
-    <br><br>
-    
-    <label for="arms">Arms: </label>
-    <input type="text" name="gear[arms]" id="arms">
-    
-    <br><br>
-    
-    <label for="feet">Feet: </label>
-    <input type="text" name="gear[feet]" id="feet">
-    
-    <br><br>
-    
-    <h3>Encounters</h3>
-    <label for="1">Encounter 1: </label>
-    <input type="text" name="klass[skills][]">
-    
-    <br><br>
-    
-    <label for="2">Encounter 2: </label>
-    <input type="text" name="klass[skills][]">
-    
-    <br><br>
-    
-    <label for="3">Encounter 3: </label>
-    <input type="text" name="klass[skills][]">
-    
-    <br><br>
-    
-    <input type="submit" value="Create Build">
-</form>
+        <br><br>
+
+        <h3>Describe your build with encounter rotations and stat distributions:</h3>
+        <textarea name="build[description]"></textarea>
+
+        <br><br>
+
+        <h3>Choose a Race:</h3>
+        <select name="karacter[race]">
+            <option value="Half-Orc">Half-Orc</option>
+            <option value="Drow">Drow</option>
+            <option value="Human">Human</option>
+            <option value="Dragonkin">Dragonkin</option>
+            <option value="Dwarf">Dwarf</option>
+            <option value="Sun-Elf">Sun-Elf</option>
+            <option value="Wood-Elf">Wood-Elf</option>
+            <option value="Halfing">Halfing</option>
+        </select>
+
+        <br><br>
+
+        <h3>Choose a Class:</h3>
+        <select name="klass[name]">
+            <option value="Great Weapons Fighter">Great Weapons Fighter</option>
+            <option value="Guardian Fighter">Guardian Fighter</option>
+            <option value="Control Wizard">Control Wizard</option>
+            <option value="Scourge Warlock">Scourge Warlock</option>
+            <option value="Hunter Ranger">Hunter Ranger</option>
+            <option value="Trickster Rogue">Trickster Rogue</option>
+            <option value="Divine Cleric">Divine Cleric</option>
+            <option value="Oathbound Paladin">Oathbound Paladin</option>
+        </select>
+
+        <br><br>
+
+        <h3>Write Out the Necessary Equipment</h3>
+        <label for="head">Headpiece: </label>
+        <input type="text" name="gear[head]" id="head">
+
+        <br><br>
+
+        <label for="chest">Chestpiece: </label>
+        <input type="text" name="gear[chest]" id="chest">
+
+        <br><br>
+
+        <label for="arms">Arms: </label>
+        <input type="text" name="gear[arms]" id="arms">
+
+        <br><br>
+
+        <label for="feet">Feet: </label>
+        <input type="text" name="gear[feet]" id="feet">
+
+        <br><br>
+
+        <h3>Encounters</h3>
+        <label for="1">Encounter 1: </label>
+        <input type="text" name="klass[skills][]">
+
+        <br><br>
+
+        <label for="2">Encounter 2: </label>
+        <input type="text" name="klass[skills][]">
+
+        <br><br>
+
+        <label for="3">Encounter 3: </label>
+        <input type="text" name="klass[skills][]">
+
+        <br><br><br>
+
+        <input class="submit-button" type="submit" value="Create Build">
+    </form>
+</div>

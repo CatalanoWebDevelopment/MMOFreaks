@@ -5,7 +5,7 @@
 
     <h3 class="headline">Available Builds:</h3>
     <ol>
-    <% @user.builds.each do |build| %>
+    <% @build.each do |build| %>
         <li><a href="/builds/<%= build.id %>"><%= build.name %></a></li>
     <% end %>
     </ol>

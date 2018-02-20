@@ -49,5 +49,26 @@ class BuildsController < ApplicationController
             redirect '/'
         end
     end
+    
+    delete '/builds/:id/delete' do
+        @user = current_user
+        @build = Build.find_by_id(params[:id])
+        @build.delete
+        
+        redirect "/users/#{@user.slug}"
+    end
+    
+    get '/builds/:id/edit' do
+        @build = Build.find_by_id(params[:id])
+    end
+        
+    
+    patch '/builds/:id/edit' do
+        @build = Build.find_by_id(params[:id])
+        @build.update
+        @build.save
+        
+        redirect "/builds/#{@build.id}"
+    end
         
 end
