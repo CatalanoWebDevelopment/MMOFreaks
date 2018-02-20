@@ -1,14 +1,18 @@
-<h1>Welcome <%= @user.username %>!</h1>
+<img src="/images/NWO_Build_Image.jpg" alt="Man on Horseback with Team of Adventurers" id="moh">
 
-<h3>Available Builds:</h3>
-<ol>
-<% @user.builds.each do |build| %>
-    <li><a href="/builds/<%= build.id %>"><%= build.name %></a></li>
-<% end %>
-</ol>
+<div class="heading-container">
+    <h1 class="headline">Welcome <%= @user.username %>!</h1>
 
-<br><br>
-<button><a href='/builds/new'>Create a Build</a></button>
+    <h3 class="headline">Available Builds:</h3>
+    <ol>
+    <% @user.builds.each do |build| %>
+        <li><a href="/builds/<%= build.id %>"><%= build.name %></a></li>
+    <% end %>
+    </ol>
 
-<br><br>
-<button><a href='/logout'>Logout</a></button>
+    <br><br>
+    <button class="submit-button"><a href='/builds/new'>Create a Build</a></button>
+
+    <br><br>
+    <button class="submit-button"><a href='/logout'>Logout</a></button>
+</div>
