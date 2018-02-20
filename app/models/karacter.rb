@@ -1,7 +1,6 @@
-class Character < ActiveRecord::Base
+class Karacter < ActiveRecord::Base
     has_many :builds
     
-    validates :name, presence: true
-    validates :attributes, presence: true
+    validates :race, presence: true
 end
 

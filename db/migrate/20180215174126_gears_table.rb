@@ -1,6 +1,6 @@
-class EquipmentsTable < ActiveRecord::Migration[5.1]
+class GearsTable < ActiveRecord::Migration[5.1]
   def change
-      create_table :equipments do |t|
+      create_table :gears do |t|
           t.string :stats
           t.string :name
           t.string :head

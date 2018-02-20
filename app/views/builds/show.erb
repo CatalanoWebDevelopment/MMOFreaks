@@ -3,27 +3,27 @@
 <h3>Description:</h3>
 <p><%= @build.description %></p>
 
-<br><br>
+<br>
 
-<h3>Race: <%= @build.character.name %></h3>
+<h3>Race: <%= @build.karacter.race %></h3>
 
 <h3>Class: <%=  @build.klass.name %></h3>
 
-<ul>
 <h3>Equipment: </h3>
-    <li>Head: <%= %></li>
-    <li>Chest: <%= %></li>
-    <li>Arms: <%= %></li>
-    <li>Feet: <%= %></li>
-</ul>
-
+<% @build.gears.each do |gear|%>
+    <ul>
+        <li>Head: <%= gear.head %></li>
+        <li>Chest: <%= gear.chest %></li>
+        <li>Arms: <%= gear.arms %></li>
+        <li>Feet: <%= gear.feet %></li>
+    </ul>
+<% end %>
 <br><br>
 
-<ul>
 <h3>Encounters: </h3>
-    <li><%= %></li>
-    <li><%= %></li>
-    <li><%= %></li>
-    <li><%= %></li>
+<% @build.klass.readable_skills.each do |skill| %>
+<ul>
+        <li><%= skill %></li>
 </ul>
+<% end %>
 

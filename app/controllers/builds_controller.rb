@@ -16,13 +16,18 @@ class BuildsController < ApplicationController
             else
                 
                 @build = Build.create(params[:build])
-                @build.build_karacter(params[:karacter])
-                @build.build_klass(params[:klass])
-                @build.equipments.build_equipment
                 
+                new_char = Karacter.create(params[:karacter])
+                @build.karacter = new_char
                 
+                new_klass = Klass.create(params[:klass])
+                @build.klass = new_klass
                 
+                new_gear = Gear.create(head: params[:gear][:head], chest: params[:gear][:chest], arms: params[:gear][:arms], feet: params[:gear][:feet])
+                @build.gears.push(new_gear)
                 
+                @build.save
+           
                 if @build.save
                     redirect "/builds/#{@build.id}"
                 else

@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180215184508) do
 
-  create_table "build_equipments", force: :cascade do |t|
+  create_table "build_gears", force: :cascade do |t|
     t.integer "build_id"
-    t.integer "equipment_id"
+    t.integer "gear_id"
   end
 
   create_table "builds", force: :cascade do |t|
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180215184508) do
     t.integer "klass_id"
     t.integer "race_id"
     t.string "description"
+    t.integer "karacter_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -31,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180215184508) do
     t.integer "build_id"
   end
 
-  create_table "equipments", force: :cascade do |t|
+  create_table "gears", force: :cascade do |t|
     t.string "stats"
     t.string "name"
     t.string "head"
@@ -41,8 +42,7 @@ ActiveRecord::Schema.define(version: 20180215184508) do
   end
 
   create_table "karacters", force: :cascade do |t|
-    t.string "name"
-    t.string "attributes"
+    t.string "race"
   end
 
   create_table "klasses", force: :cascade do |t|
