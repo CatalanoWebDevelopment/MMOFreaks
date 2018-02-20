@@ -65,7 +65,7 @@ class BuildsController < ApplicationController
     end
         
     
-    patch '/builds/:id/edit' do
+    patch '/builds/:id/' do
         @build = Build.find_by_id(params[:id])
         @build.update
         @build.save

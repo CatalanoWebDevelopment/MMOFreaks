@@ -34,6 +34,10 @@ a:hover {
     color: darkblue;
 }
 
+.parchment {
+    background: url("/images/parchment.jpeg") repeat;
+}
+
 /*INDEX PAGE*/
 
 #don {

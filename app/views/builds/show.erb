@@ -1,50 +1,54 @@
 <img src="/images/NWO_Characters.jpg" alt="Available Playable Neverwinter Races" id="apr">
 
-<h1><%= @build.name %></h1>
+<div class="parchment">
+    <div class="heading-container">
+        <h1><%= @build.name %></h1>
 
-<h3>Description:</h3>
-<p><%= @build.description %></p>
+        <h3>Description:</h3>
+        <p><%= @build.description %></p>
 
-<br>
+        <br>
 
-<h3>Race: <%= @build.karacter.race %></h3>
+        <h3>Race: <%= @build.karacter.race %></h3>
 
-<h3>Class: <%=  @build.klass.name %></h3>
+        <h3>Class: <%=  @build.klass.name %></h3>
 
-<h3>Equipment: </h3>
-    <% @build.gears.each do |gear|%>
-    <ul>
-        <li>Head: <%= gear.head %></li>
-        <li>Chest: <%= gear.chest %></li>
-        <li>Arms: <%= gear.arms %></li>
-        <li>Feet: <%= gear.feet %></li>
-    </ul>
-    <% end %>
-<br><br>
+        <h3>Equipment: </h3>
+            <% @build.gears.each do |gear|%>
+            <ul>
+                <li>Head: <%= gear.head %></li>
+                <li>Chest: <%= gear.chest %></li>
+                <li>Arms: <%= gear.arms %></li>
+                <li>Feet: <%= gear.feet %></li>
+            </ul>
+            <% end %>
+        <br><br>
 
-<h3>Encounters: </h3>
-    <% @build.klass.readable_skills.each do |skill| %>
-    <ul>
-        <li><%= skill %></li>
-    </ul>
-    <% end %>
+        <h3>Encounters: </h3>
+            <% @build.klass.readable_skills.each do |skill| %>
+            <ul>
+                <li><%= skill %></li>
+            </ul>
+            <% end %>
 
-<br><br>
+        <br><br>
 
-<% if current_user.builds.include?(@build) %>
-    <form method="POST" action="/builds/<%= @build.id %>/delete">
-        <input type="hidden" name="_method" value="DELETE">
-        <button name="submit" value="submit" class="submit-button">Delete Build</button>
-    </form>
+        <% if current_user.builds.include?(@build) %>
+            <form method="POST" action="/builds/<%= @build.id %>/delete">
+                <input type="hidden" name="_method" value="DELETE">
+                <button name="submit" value="submit" class="submit-button">Delete Build</button>
+            </form>
 
-    <br>
-    
-    <button class="submit-button"><a href="/builds/<%= @build.id %>/edit">Edit Build</a></button>
-<% end %>
+            <br>
 
-<br><br>
+            <button class="submit-button"><a href="/builds/<%= @build.id %>/edit">Edit Build</a></button>
+        <% end %>
 
-<button class="submit-button"><a href="/users/<%= @user.slug %>">Back to Profile Page</a></button>
+        <br><br>
+
+        <button class="submit-button"><a href="/users/<%= @user.slug %>">Back to Profile Page</a></button>
+    </div>
+</div>
 
 
 
