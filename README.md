@@ -1,6 +1,6 @@
 # MMOFreaks
 
-Welcome to MMOFreaks! This gem allows you to create a basic build setup for your favorite characts. For future expansion, I would like to include artifacts and actual gear stats and pictures. In order to run this application, enter shotgun in your terminal and create your own accounts. Accounts require a username, email, and password in order to be successfully inputed. I look forward to all contributions! If you would like to get in contact with me regarding this application and future advancements, please reach out at:
+Welcome to MMOFreaks! This gem allows you to create a basic build setup for your favorite characters. For future expansion, I would like to include artifacts and actual gear stats and pictures. In order to run this application, enter shotgun in your terminal and create your own accounts. Accounts require a username, email, and password in order to be successfully inputed. I look forward to all contributions! If you would like to get in contact with me regarding this application and future advancements, please reach out at:
 
 catalano.work@gmail.com
 
