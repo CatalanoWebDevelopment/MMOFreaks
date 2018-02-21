@@ -65,12 +65,16 @@ class BuildsController < ApplicationController
     end
         
     
-    patch '/builds/:id/' do
+    patch '/builds/:id' do
         @build = Build.find_by_id(params[:id])
-        @build.update
+        @build.update(params[:build])
         @build.save
         
-        redirect "/builds/#{@build.id}"
+        if @build.save 
+            redirect "/builds/#{@build.id}"
+        else
+            redirect "/builds/#{@build.id}/edit"
+        end
     end
         
 end
