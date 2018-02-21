@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["catalanowebdevelopment"]
   spec.email         = ["catalano.work@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "MMOFreaks allows the build generation of your choice in characters through the massively online player game Neverwinter. To load the prompts, simply run shotgun in your terminal and copy the link to reach your personally generated site."
+    
+  spec.homepage      = "https://github.com/CatalanoWebDevelopment/MMOFreaks"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

@@ -32,6 +32,25 @@
             <% end %>
 
         <br><br>
+        
+        <h3>User Comments: </h3>
+        <ul>
+            <% @comments.each do |comment| %>
+                <li><%= comment %></li>
+            <% end %>
+        </ul>
+            
+        
+         <% if logged_in? %>
+            <form method="POST" action="/comments/new">
+                <label for="new_comment">Would you like to comment on this build?</label>
+                <br>
+                <textarea id="new_comment" name="comments[content]" rows="5" cols="75"></textarea>
+                <button class="submit-button" name="submit" value="submit">Post</button>
+            </form>
+        <% end %>
+        
+        <br><br>
 
         <% if current_user.builds.include?(@build) %>
             <form method="POST" action="/builds/<%= @build.id %>/delete">

@@ -43,6 +43,7 @@ class BuildsController < ApplicationController
     get '/builds/:id' do
         if logged_in?
             @build = Build.find_by_id(params[:id])
+            @comments = Comment.all
             @user = current_user
             erb :'/builds/show'
         else
