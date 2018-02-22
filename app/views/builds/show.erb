@@ -35,14 +35,15 @@
         
         <h3>User Comments: </h3>
         <ul>
-            <% @comments.each do |comment| %>
-                <li><%= comment %></li>
+            <% @build.comments.each do |comment| %>
+                <p><%= comment.user.username %> says:</p>
+                <li><%= comment.content %></li>
             <% end %>
         </ul>
             
         
          <% if logged_in? %>
-            <form method="POST" action="/comments/new">
+            <form method="POST" action="/builds/<%= @build.id %>/comments/new">
                 <label for="new_comment">Would you like to comment on this build?</label>
                 <br>
                 <textarea id="new_comment" name="comments[content]" rows="5" cols="75"></textarea>

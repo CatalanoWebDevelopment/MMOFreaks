@@ -110,3 +110,17 @@ a:hover {
     min-height: 100%;
     width: 100%;
 }
+
+/*FLASH WARNINGS*/
+
+div.flash.error {
+    color: red;
+    border: 10px solid red;
+    background-color: black;
+}
+
+div.flash.success {
+    color: white;
+    border: 10px solid black;
+    background-color: greenyellow;
+}

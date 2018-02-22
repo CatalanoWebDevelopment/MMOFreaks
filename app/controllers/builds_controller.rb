@@ -12,6 +12,7 @@ class BuildsController < ApplicationController
     post '/builds' do        
         if logged_in?
             if params[:karacter] == "" || params[:klass] == "" || params[:build] == ""
+                flash[:error] = "Error, please fill out all fields in order to create build."
                 redirect '/builds/new'
             else
                 
@@ -32,10 +33,12 @@ class BuildsController < ApplicationController
                     
                     redirect "/builds/#{@build.id}"
                 else
+                    flash[:error] = "Error, please fill out all fields in order to create build."
                     redirect "/builds/new"
                 end
             end
         else
+            flash[:error] = "Error, you must be signed in to create a build."
             redirect '/'
         end
     end
@@ -47,6 +50,7 @@ class BuildsController < ApplicationController
             @user = current_user
             erb :'/builds/show'
         else
+            flash[:error] = "Error, you must be signed in to view this information."
             redirect '/'
         end
     end
@@ -72,8 +76,10 @@ class BuildsController < ApplicationController
         @build.save
         
         if @build.save 
+            flash[:success] = "Success! Your build has been created."
             redirect "/builds/#{@build.id}"
         else
+            flash[:error] = "Error, a field has been left blank."
             redirect "/builds/#{@build.id}/edit"
         end
     end

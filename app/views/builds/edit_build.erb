@@ -6,12 +6,12 @@
             <input type="hidden" name="_method" value="PATCH">
 
             <label for="new_name">New Name: </label>
-            <input type="text" id="new_name" name="build[name]" placeholder="<%= @build.name %>">
+            <input type="text" id="new_name" name="build[name]" value="<%= @build.name %>">
 
             <br><br>
 
             <label for="new_desc">New Description: </label><br>
-            <textarea id="new_desc" name="build[description]" placeholder="<%= @build.description %>"></textarea>
+            <textarea id="new_desc" name="build[description]" value="<%= @build.description %>" rows="5" cols="75"></textarea>
 
             <br><br>
 
@@ -32,22 +32,22 @@
             <label>New Equipment: </label><br>
             <% @build.gears.each do |gear| %>
             <label for="new_head">Headpiece: </label>
-            <input type="text" name="gear[head]" id="new_head" placeholder="<%= gear.head %>">
+            <input type="text" name="gear[head]" id="new_head" value="<%= gear.head %>">
 
             <br><br>
 
             <label for="new_chest">Chestpiece: </label>
-            <input type="text" name="gear[chest]" id="new_chest" placeholder="<%= gear.chest %>">
+            <input type="text" name="gear[chest]" id="new_chest" value="<%= gear.chest %>">
 
             <br><br>
 
             <label for="new_arms">Arms: </label>
-            <input type="text" name="gear[arms]" id="new_arms" placeholder="<%= gear.arms %>">
+            <input type="text" name="gear[arms]" id="new_arms" value="<%= gear.arms %>">
 
             <br><br>
 
             <label for="new_feet">Feet: </label>
-            <input type="text" name="gear[feet]" id="new_feet" placeholder="<%= gear.feet %>">
+            <input type="text" name="gear[feet]" id="new_feet" value="<%= gear.feet %>">
             <% end %>
             
             <br><br>
@@ -55,7 +55,7 @@
             <label>New Encounters: </label>
             <% @build.klass.readable_skills.each do |skill| %>
                 <ul>
-                    <li><input type="text" name="klass[skills][]" placeholder="<%= skill %>"></li>
+                    <li><input type="text" name="klass[skills][]" value="<%= skill %>"></li>
                 </ul>
             <% end %>
             
