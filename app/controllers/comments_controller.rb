@@ -22,6 +22,19 @@ class CommentsController < ApplicationController
         erb :'/comments/edit_comment'
     end
     
+    patch '/builds/:number/comments/:id' do
+        @build = Build.find_by_id(params[:number])
+        @comment = Comment.find_by_id(params[:id])
+        @comment.update(params[:comment])
+        
+        if @comment.save
+            redirect "/builds/#{@build.id}"
+        else
+            flash[:error] = "Please add content to your new comment!"
+            redirect "/builds/#{@build.id}/comments/#{@comment.id}/edit"
+        end
+    end
+            
     delete '/builds/:number/comments/:id/delete' do
         @build = Build.find_by_id(params[:number])
         @comment = Comment.find_by_id(params[:id]) 
