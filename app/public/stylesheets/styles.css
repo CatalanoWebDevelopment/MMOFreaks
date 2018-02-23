@@ -115,12 +115,16 @@ a:hover {
 
 div.flash.error {
     color: red;
-    border: 10px solid red;
+    border: 1px solid red;
     background-color: black;
+    align-content: center;
+    padding: 3px;
 }
 
 div.flash.success {
     color: white;
-    border: 10px solid black;
+    border: 1px solid black;
     background-color: greenyellow;
+    align-content: center;
+    padding: 3px;
 }
