@@ -14,4 +14,19 @@ class CommentsController < ApplicationController
             redirect :"/builds/#{@build.id}"
         end
     end
+    
+    get '/builds/:number/comments/:id/edit' do
+        @build = Build.find_by_id(params[:number])
+        @comment = Comment.find_by_id(params[:id])
+        
+        erb :'/comments/edit_comment'
+    end
+    
+    delete '/builds/:number/comments/:id/delete' do
+        @build = Build.find_by_id(params[:number])
+        @comment = Comment.find_by_id(params[:id]) 
+        @comment.delete
+        
+        redirect "/builds/#{@build.id}"
+    end
 end

@@ -38,6 +38,15 @@
             <% @build.comments.each do |comment| %>
                 <p><%= comment.user.username %> says:</p>
                 <li><%= comment.content %></li>
+                    <% if current_user.comments.include?(comment) %>
+                        <button><a href="/builds/<%= @build.id %>/comments/<%= comment.id %>/edit">Edit Comment</a></button>
+            
+                        <form method="POST" action="/builds/<%= @build.id %>/comments/<%= comment.id %>/delete">
+                            <input type="hidden" name="_method" value="DELETE">
+                            
+                            <input type="submit" value="Delete Comment">
+                        </form>
+                    <% end %>
             <% end %>
         </ul>
             
