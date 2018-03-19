@@ -11,11 +11,6 @@ class BuildsController < ApplicationController
     
     post '/builds' do        
         if logged_in?
-            if params[:karacter] == "" || params[:klass] == "" || params[:build] == ""
-                flash[:error] = "Error, please fill out all fields in order to create build."
-                redirect '/builds/new'
-            else
-                
                 @build = Build.create(params[:build])
                 
                 new_char = Karacter.create(params[:karacter])
@@ -36,7 +31,6 @@ class BuildsController < ApplicationController
                     flash[:error] = "Error, please fill out all fields in order to create build."
                     redirect "/builds/new"
                 end
-            end
         else
             flash[:error] = "Error, you must be signed in to create a build."
             redirect '/'
@@ -65,8 +59,11 @@ class BuildsController < ApplicationController
     
     get '/builds/:id/edit' do
         @build = Build.find_by_id(params[:id])
-        
-        erb :'/builds/edit_build'
+        if current_user.id == @build.user_id
+            erb :'/builds/edit_build'
+        else
+            redirect :"/builds/#{@build.id}"
+        end
     end
         
     

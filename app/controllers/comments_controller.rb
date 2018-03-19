@@ -16,10 +16,13 @@ class CommentsController < ApplicationController
     end
     
     get '/builds/:number/comments/:id/edit' do
-        @build = Build.find_by_id(params[:number])
         @comment = Comment.find_by_id(params[:id])
-        
-        erb :'/comments/edit_comment'
+        @build = Build.find_by_id(params[:number])
+        if current_user.id == @comment.user_id
+            erb :'/comments/edit_comment'
+        else
+            redirect :"/builds/#{@build.id}"
+        end
     end
     
     patch '/builds/:number/comments/:id' do
