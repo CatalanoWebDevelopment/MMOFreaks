@@ -69,8 +69,13 @@ class BuildsController < ApplicationController
     
     patch '/builds/:id' do
         @build = Build.find_by_id(params[:id])
-        @build.update(params[:build])
-        @build.save
+        
+        if current_user.id == @build.user_id
+            @build.update(params[:build])
+            @build.save
+        else
+            redirect "/builds/#{@build.id}/edit"
+        end
         
         if @build.save 
             flash[:success] = "Success! Your build has been created."

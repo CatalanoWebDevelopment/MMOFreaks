@@ -28,7 +28,12 @@ class CommentsController < ApplicationController
     patch '/builds/:number/comments/:id' do
         @build = Build.find_by_id(params[:number])
         @comment = Comment.find_by_id(params[:id])
-        @comment.update(params[:comment])
+        
+        if current_user.id == @comment.user_id
+            @comment.update(params[:comment])
+        else
+            redirect "/builds/#{@build.id}/comments/#{@comment.id}/edit"
+        end
         
         if @comment.save
             redirect "/builds/#{@build.id}"
