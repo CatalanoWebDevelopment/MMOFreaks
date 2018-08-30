@@ -1,4 +1,4 @@
-class KlassesTable < ActiveRecord::Migration[5.1]
+class KlassesTable < ActiveRecord::Migration
   def change
       create_table :klasses do |t|
           t.string :name

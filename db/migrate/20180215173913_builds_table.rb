@@ -1,4 +1,4 @@
-class BuildsTable < ActiveRecord::Migration[5.1]
+class BuildsTable < ActiveRecord::Migration
   def change
       create_table :builds do |t|
           t.integer :user_id

@@ -1,4 +1,4 @@
-class CommentsTable < ActiveRecord::Migration[5.1]
+class CommentsTable < ActiveRecord::Migration
   def change
       create_table :comments do |t|
           t.string :content

@@ -1,4 +1,4 @@
-class GearsTable < ActiveRecord::Migration[5.1]
+class GearsTable < ActiveRecord::Migration
   def change
       create_table :gears do |t|
           t.string :stats
