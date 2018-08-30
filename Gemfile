@@ -12,12 +12,12 @@ gem 'dotenv'
 gem 'rails_12factor'
 gem 'foreman'
 gem 'sinatra-flash'
+gem 'pry'
 
 group :development do
   gem 'sqlite3'
   gem 'shotgun'
   gem 'tux'
-  gem 'pry'
 end
 
 group :test do
