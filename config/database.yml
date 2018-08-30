@@ -1,11 +1,11 @@
 development: 
-    adapter: postgresql
-    encoding: utf8
+    adapter: sqlite3
+    encoding: unicode
     database: mmofreaks_development
     pool: 5
     
 production: 
     adapter: postgresql
-    encoding: utf8 
+    encoding: unicode 
     database: mmofreaks_production
     pool: 5
