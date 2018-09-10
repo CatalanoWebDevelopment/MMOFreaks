@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder , 'public'
     set :views, 'app/views'
     enable :sessions
+    set :protection, :except => :frame_options
     register Sinatra::Flash
     set :session_secret, ENV.fetch('SESSION_SECRET')
   end
