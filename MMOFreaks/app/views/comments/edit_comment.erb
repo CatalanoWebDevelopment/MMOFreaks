@@ -1,0 +1,20 @@
+<div class="parchment">
+    <div class="heading-container">
+        <h1>Edit Your Comment!</h1>
+
+        <div class="comment-box">
+            <h3>Your Comment:</h3>
+            <%= @comment.content %>
+
+            <h3>New Comment:</h3>
+            <form method="POST" action="/builds/<%= @build.id %>/comments/<%= @comment.id %>">
+                <input type="hidden" name="_method" value="PATCH">
+                <textarea name="comment[content]" rows="5" cols="75"></textarea>
+
+                <br><br>
+
+                <input type="submit" value="Update Post">
+            </form>
+        </div>
+    </div>
+</div>

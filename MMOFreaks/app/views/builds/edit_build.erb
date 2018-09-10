@@ -1,0 +1,70 @@
+<div class="parchment">
+    <div class="heading-container">
+        <h1>You are now editing: <%= @build.name %></h1>
+
+        <form method="POST" action="/builds/<%= @build.id %>">
+            <input type="hidden" name="_method" value="PATCH">
+
+            <label for="new_name">New Name: </label>
+            <input type="text" id="new_name" name="build[name]" value="<%= @build.name %>">
+
+            <br><br>
+
+            <label for="new_desc">New Description: </label><br>
+            <textarea id="new_desc" name="build[description]" value="<%= @build.description %>" rows="5" cols="75"></textarea>
+
+            <br><br>
+
+            <label for="new_race">New Race: </label>
+            <select name="karacter[race]">
+                <option value="Half-Orc" <%= "selected" if @build.karacter.race == "Half-Orc" %>>Half-Orc</option>
+                <option value="Drow" <%= "selected" if @build.karacter.race == "Drow" %>>Drow</option>
+                <option value="Human" <%= "selected" if @build.karacter.race == "Human" %>>Human</option>
+                <option value="Dragonkin" <%= "selected" if @build.karacter.race == "Dragonkin" %>>Dragonkin</option>
+                <option value="Dwarf" <%= "selected" if @build.karacter.race == "Dwarf" %>>Dwarf</option>
+                <option value="Sun-Elf" <%= "selected" if @build.karacter.race == "Sun-Elf" %>>Sun-Elf</option>
+                <option value="Wood-Elf" <%= "selected" if @build.karacter.race == "Wood-Elf" %>>Wood-Elf</option>
+                <option value="Halfling" <%= "selected" if @build.karacter.race == "Halfling" %>>Halfling</option>
+            </select>
+
+            <br><br>
+
+            <label>New Equipment: </label><br>
+            <% @build.gears.each do |gear| %>
+            <label for="new_head">Headpiece: </label>
+            <input type="text" name="gear[head]" id="new_head" value="<%= gear.head %>">
+
+            <br><br>
+
+            <label for="new_chest">Chestpiece: </label>
+            <input type="text" name="gear[chest]" id="new_chest" value="<%= gear.chest %>">
+
+            <br><br>
+
+            <label for="new_arms">Arms: </label>
+            <input type="text" name="gear[arms]" id="new_arms" value="<%= gear.arms %>">
+
+            <br><br>
+
+            <label for="new_feet">Feet: </label>
+            <input type="text" name="gear[feet]" id="new_feet" value="<%= gear.feet %>">
+            <% end %>
+            
+            <br><br>
+            
+            <label>New Encounters: </label>
+            <% @build.klass.readable_skills.each do |skill| %>
+                <ul>
+                    <li><input type="text" name="klass[skills][]" value="<%= skill %>"></li>
+                </ul>
+            <% end %>
+            
+            <br><br>
+            
+            <button class="submit-button" name="submit" value="submit">Update Build</button>
+
+
+        </form>
+
+    </div>
+</div>

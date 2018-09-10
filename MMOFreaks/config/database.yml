@@ -1,0 +1,11 @@
+development: 
+    adapter: sqlite3
+    encoding: unicode
+    database: mmofreaks_development
+    pool: 5
+    
+production: 
+    adapter: postgresql
+    encoding: unicode 
+    database: mmofreaks_production
+    pool: 5

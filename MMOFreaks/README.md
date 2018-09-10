@@ -1,8 +1,11 @@
 # MMOFreaks
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/MMOFreaks`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to MMOFreaks! This gem allows you to create a basic build setup for your favorite characters. For future expansion, I would like to include artifacts and actual gear stats and pictures. In order to run this application, enter shotgun in your terminal and create your own accounts. Accounts require a username, email, and password in order to be successfully inputed. I look forward to all contributions! If you would like to get in contact with me regarding this application and future advancements, please reach out at:
 
-TODO: Delete this and the text above, and describe your gem
+catalano.work@gmail.com
+
+
+Enjoy <3
 
 ## Installation
 
@@ -22,7 +25,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This application initiates using shotgun to load its server and store information into the database. Use this application as a rough guide to store your character loadouts. 
 
 ## Development
 

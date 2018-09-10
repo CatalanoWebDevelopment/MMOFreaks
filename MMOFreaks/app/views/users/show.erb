@@ -1,0 +1,18 @@
+<img src="/images/NWO_Build_Image.jpg" alt="Man on Horseback with Team of Adventurers" id="moh">
+
+<div class="heading-container">
+    <h1 class="headline">Welcome <%= @user.username %>!</h1>
+
+    <h3 class="headline">Available Builds:</h3>
+    <ol>
+    <% @build.each do |build| %>
+        <li><a href="/builds/<%= build.id %>"><%= build.name %></a></li>
+    <% end %>
+    </ol>
+
+    <br><br>
+    <button class="submit-button"><a href='/builds/new'>Create a Build</a></button>
+
+    <br><br>
+    <button class="submit-button"><a href='/logout'>Logout</a></button>
+</div>
